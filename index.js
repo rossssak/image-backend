@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // อ่านไฟล์ CA Certificate
-const caCert = fs.readFileSync('C:\\Users\\Lenovo\\Downloads\\isrgrootx1.pem');
+const caCert = fs.readFileSync('c:\Users\Lenovo\Downloads\isrgrootx1.pem');
 
 // เชื่อมต่อ TiDB Cloud ด้วย SSL
 const db = mysql.createConnection({
