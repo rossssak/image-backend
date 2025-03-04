@@ -6,4 +6,4 @@ services:
     startCommand: node index.js
     env:
       - key: DATABASE_URL
-        value: mysql://3cofk25L3pkaBhY.root:<PASSWORD>@gateway01.us-west-2.prod.aws.tidbcloud.com:4000/image_db
+        value: mysql://3cofk25L3pkaBhY.root:<pBlFWmsKFjD7hlpZ>@gateway01.us-west-2.prod.aws.tidbcloud.com:4000/image_db
