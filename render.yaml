@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: image-gallery-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: node index.js
+    env:
+      - key: DATABASE_URL
+        value: mysql://3cofk25L3pkaBhY.root:<PASSWORD>@gateway01.us-west-2.prod.aws.tidbcloud.com:4000/image_db
