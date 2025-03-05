@@ -1,7 +1,7 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
-const path = require('path');
+
 
 const app = express();
 app.use(cors());
@@ -21,30 +21,8 @@ const db = mysql.createConnection({
 });
 
 db.connect((err) => {
-  if (err) {
-    console.error('Error connecting to TiDB Cloud:', err);
-    // ถ้าเกิด error ให้ลองแบบไม่ใช้ SSL ก็ได้ (ใช้เฉพาะสำหรับ development)
-    // หรืออาจจะไม่ควรเปิดใช้ตัวเลือกนี้หากต้องการความปลอดภัย
-    /*
-    console.log('Trying to connect without SSL...');
-    db = mysql.createConnection({
-      host: 'gateway01.us-west-2.prod.aws.tidbcloud.com', 
-      user: '3cofk25L3pkaBhY.root',
-      password: 'pBlFWmsKFjD7hlpZ',
-      database: 'image_db',
-      port: 4000
-    });
-    db.connect((err) => {
-      if (err) {
-        console.error('Error connecting without SSL:', err);
-      } else {
-        console.log('Connected to TiDB Cloud without SSL');
-      }
-    });
-    */
-  } else {
-    console.log('Connected to TiDB Cloud');
-  }
+  if (err) throw err;
+  console.log('Connected to TiDB Cloud');
 });
 
 // API เพื่อดึงข้อมูลทั้งหมด
